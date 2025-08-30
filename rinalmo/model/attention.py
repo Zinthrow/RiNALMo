@@ -166,7 +166,7 @@ class FlashMultiHeadSelfAttention(nn.Module):
                 base=10000.0,
                 interleaved=False,
                 scale_base=None,
-                pos_idx_in_fp32=True,  # fp32 RoPE precision
+                #pos_idx_in_fp32=True,  # fp32 RoPE no longer included in FlashAttention 2.8.1
                 device=None
             )
         self.flash_self_attn = FlashAttention(causal=self.causal, softmax_scale=None, attention_dropout=attention_dropout)
